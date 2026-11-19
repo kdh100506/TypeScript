@@ -1,5 +1,8 @@
 {
   "include": ["src"],
+  "ts-node": {
+    "esm": true
+  },
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
