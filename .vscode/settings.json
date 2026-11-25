@@ -1,14 +1,14 @@
 {
   "terminal.integrated.profiles.osx": {
-    "TypeScript 강의": {
+    "TypeScript Node 18": {
       "path": "/bin/zsh",
       "args": [
         "-i"
       ],
       "env": {
-        "PATH": "/Users/dgsw12/Documents/Codex/2026-11-19/du/work/lecture-node/node_modules/.bin:${env:PATH}"
+        "ZDOTDIR": "/Users/dgsw12/Desktop/onbite/onebite-typescript/.vscode"
       }
     }
   },
-  "terminal.integrated.defaultProfile.osx": "TypeScript 강의"
+  "terminal.integrated.defaultProfile.osx": "TypeScript Node 18"
 }
