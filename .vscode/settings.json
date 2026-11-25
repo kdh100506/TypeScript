@@ -1,0 +1,14 @@
+{
+  "terminal.integrated.profiles.osx": {
+    "TypeScript 강의": {
+      "path": "/bin/zsh",
+      "args": [
+        "-i"
+      ],
+      "env": {
+        "PATH": "/Users/dgsw12/Documents/Codex/2026-11-19/du/work/lecture-node/node_modules/.bin:${env:PATH}"
+      }
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "TypeScript 강의"
+}
