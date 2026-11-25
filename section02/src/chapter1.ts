@@ -1,5 +1,3 @@
-import { tr } from "motion/react-client";
-
 // number
 let num1: number = 123;
 let num2: number = -123;
@@ -10,10 +8,10 @@ let num6: number = -Infinity;
 let num7: number = NaN;
 
 // string
-let str1: string = "Hello";
+let str1: string = 'Hello';
 let str2: String = 'Hello';
 let str3: string = `Hello`;
-let str4: string = `Hello ${num1}`
+let str4: string = `Hello ${num1}`;
 
 // boolean
 let bool1: boolean = true;
@@ -27,6 +25,5 @@ let unde1: undefined = undefined;
 
 // 리터럴(값) 타입
 let numA: 10 = 10;
-let str:"Hello" = "Hello";
+let str: 'Hello' = 'Hello';
 let boolA: true = true;
-
