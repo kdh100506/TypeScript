@@ -1,0 +1,17 @@
+{
+  "include": ["src"],
+  "ts-node": {
+    "esm": true
+  },
+  "compilerOptions": {
+    "types": ["node"],
+    "target": "esnext",
+    "module": "esnext", 
+    "outDir": "dist",
+    "strict": true,
+    // "strictNullChecks": false,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "rootDir": "./src"
+  }
+}
