@@ -43,6 +43,9 @@ async function createTodo(): Promise<void> {
 
 function showAllTodo(): void {
   console.log('===== 전체 Todo =====');
+  if(todoList.length === 0) {
+    console.log('생성된 Todo가 없습니다.')
+  }
   for (let index = 0; index < todoList.length; index++) {
     if (todoList[index].memo !== '') {
       console.log(`id: ${todoList[index].id}`);
@@ -60,6 +63,7 @@ function showAllTodo(): void {
 }
 
 function showCheckedTodo(): void {
+  let nullCheck: number = 0;
   console.log('===== 완료 Todo =====');
   for (let index = 0; index < todoList.length; index++) {
     if (todoList[index].memo !== '' && todoList[index].state === '완료') {
@@ -68,16 +72,22 @@ function showCheckedTodo(): void {
       console.log(`state: ${todoList[index].state}`);
       console.log(`memo: ${todoList[index].memo}`);
       console.log();
+      nullCheck++;
     } else if (todoList[index].memo === '' && todoList[index].state === '완료') {
       console.log(`id: ${todoList[index].id}`);
       console.log(`title: ${todoList[index].title}`);
       console.log(`state: ${todoList[index].state}`);
       console.log();
+      nullCheck++;
     }
+  }
+  if (nullCheck === 0) {
+    console.log('완료된 Todo가 없습니다.');
   }
 }
 
 function showNoCheckedTodo(): void {
+  let nullCheck: number = 0;
   console.log('===== 미완료 Todo =====');
   for (let index = 0; index < todoList.length; index++) {
     if (todoList[index].memo !== '' && todoList[index].state === '미완료') {
@@ -86,12 +96,17 @@ function showNoCheckedTodo(): void {
       console.log(`state: ${todoList[index].state}`);
       console.log(`memo: ${todoList[index].memo}`);
       console.log();
+      nullCheck++;
     } else if (todoList[index].memo === '' && todoList[index].state === '미완료') {
       console.log(`id: ${todoList[index].id}`);
       console.log(`title: ${todoList[index].title}`);
       console.log(`state: ${todoList[index].state}`);
       console.log();
+      nullCheck++;
     }
+  }
+  if (nullCheck === 0) {
+    console.log('미완료된 Todo가 없습니다.');
   }
 }
 
@@ -124,7 +139,7 @@ async function checkTodo() {
   let choice: string;
   while (true) {
     choice = await rl.question('상태를 완료로 변경할 Todo의 id를 입력해 주세요.\ninput: ');
-    if (Number(choice) >= todoList.length && Number(choice) < 0) {
+    if (Number(choice) >= todoList.length || Number(choice) < 0) {
       console.log('존재하지 않는 id 입니다.');
       continue;
     }
